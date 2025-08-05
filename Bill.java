@@ -55,10 +55,10 @@ class Receipt {
         System.out.println("                  CONTACT NO : 0331-2930347     ");
         System.out.println("                      CASH MEMO                   ");
         System.out.println("Date : " + dateTime);
-        System.out.println("=======================================================");
+        System.out.println("===========================================================");
         
 //      Use for receipt formating
-        System.out.printf("%-15s%-15s%-10s%-7s%-7s\n","Quantity","Item name","Rate","Dis%","Amount");
+        System.out.printf("%-5s%-30s%-8s%-8s%-8s\n","Qty","Item name","Rate","Dis%","Amount");
         
         double grosstotal = 0 , totaldiscount = 0 ,nettotal=0;
         int itemcount=0;
@@ -71,14 +71,14 @@ class Receipt {
             nettotal+= amount;
             itemcount+=item.quantity;
             
-            System.out.printf("%-15s%-15s%-10s%-7s%-7s\n", item.quantity , item.Item_name , item.rate , item.discount , amount);
+            System.out.printf("%-5s%-30s%-8s%-8s%-8s\n", item.quantity , item.Item_name , item.rate , item.discount , amount);
         }
-        System.out.println("=======================================================");
+        System.out.println("==========================================================");
         System.out.printf("Total ITEMS : %d\n", itemcount );
         System.out.printf("Gross Total :- %.2f\n",grosstotal);
         System.out.printf("Total Discount :- %.2f\n",totaldiscount);
         System.out.printf("Net Total :- %.2f\n",nettotal);
-        System.out.println("=======================================================");
+        System.out.println("==========================================================");
         System.out.println("Fridge items, loose tablets & Sugar Strip"
                 + "\nare non-refundable & non exchangeable.\nNo return & No exchange other items after 2 days\nwithout bill.");
     }
